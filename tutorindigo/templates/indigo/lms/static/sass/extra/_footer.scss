@@ -9,9 +9,8 @@
 footer.tutor-container {
     margin: 0 auto;
     padding: 0 15px;
-    max-width: 1600px;
+    max-width: 1090px;
     text-align: center;
-    box-sizing: border-box;
     @include media-breakpoint-up(lg) {
         text-align: left;
     }
@@ -45,12 +44,12 @@ footer.tutor-container {
             position: relative;
             font-size: 12px;
             line-height: 18px;
-            color: #515661;
+            color: #6B7280;
             &:first-child {
                 padding-left: 0;
             }
             &:last-child {
-                padding-left: 20px;
+                padding-left: 0px;
                 &:after {
                     position: absolute;
                     left: 5px;
@@ -59,7 +58,7 @@ footer.tutor-container {
                     width: 1px;
                     height: 29px;
                     margin: -14px 0 0;
-                    background: #515661;;
+                    background: transparent;;
                 }
             }
         }
@@ -81,10 +80,10 @@ footer.tutor-container {
                     line-height: 24px;
                 }
                 a {
-                    color: $light-dark;
+                    color: $light-drak;
                     text-decoration: none;
                     &:hover {
-                        color: $dark;
+                        color: $drak;
                         text-decoration: none;
                     }
                 }
@@ -95,41 +94,6 @@ footer.tutor-container {
         display: block;
         font-size: 12px;
         line-height: 16px;
-        color: $light-dark;
-    }
-}
-
-body.indigo-dark-theme {
-    .wrapper-footer {
-        border-top: 1px solid $border-color-d;
-        background: $body-bg-d;
-    }
-    footer.tutor-container {
-        .logo-list {
-            li {
-                color: $text-color-primary;
-                &:last-child {
-                    &:after {
-                        background: $text-color-primary;
-                    }
-                }
-            }
-        }
-        .nav-colophon {
-            ol {
-                li {
-                    a {
-                        color:$text-color-primary;
-                        &:hover {
-                            color: $text-color-d;
-                        }
-                    }
-                }
-            }
-        }
-        .copyright-site {
-            color: $text-color-primary;
-        }
-
+        color: $light-drak;
     }
 }

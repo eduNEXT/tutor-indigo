@@ -1,7 +1,6 @@
 ## mako
 <%page expression_filter="h"/>
 <%!
-  from datetime import datetime
   from django.urls import reverse
   from django.utils.translation import gettext as _
   from lms.djangoapps.branding.api import get_footer
@@ -29,35 +28,46 @@
       ## which are not technically powered by OpenEdX.
       % if not hide_openedx_link:
       <ul class="logo-list">
-        <li>Powered by:</li>
         <li>
-          <a href="https://docs.tutor.edly.io" rel="noopener" target="_blank">
-            <img src="${static.url('images/tutor-logo.png')}" alt="Runs on Tutor" width="57" />
+          <a href="https://www.uah.es/es/"" rel="noopener" target="_blank">
+            <img src="${static.url('images/tutor-logo.png')}" alt="img" width="140" />
           </a>
         </li>
         <li>
-          <a href="${footer['openedx_link']['url']}" rel="noopener" target="_blank">
-            <img src="${static.url('images/openedx-logo.png')}" alt="${footer['openedx_link']['title']}" width="79" />
+          <a href="https://www.uah.es/es/" rel="noopener" target="_blank">
+            <img src="${static.url('images/openedx-logo.png')}" alt="img" width="140" />
           </a>
         </li>
       </ul>
     </div>
-    {% if INDIGO_FOOTER_NAV_LINKS %}
+    
     <nav class="nav-colophon" aria-label="${_('About')}">
       <ol>
-          {% for link in INDIGO_FOOTER_NAV_LINKS %}
+        
           <li>
-            <a href="{{ link['url'] }}">{{ link['title'] }}</a>
+            <a href="https://www.uah.es/es/politica-de-cookies/">Pol&iacute;tica de cookies</a>
           </li>
-          {% endfor %}
+          
+          <li>
+            <a href="https://www.uah.es/es/politica-privacidad/">Pol&iacute;tica de privacidad</a>
+          </li>
+          
+          <li>
+            <a href="https://www.uah.es/es/aviso-legal/">Aviso legal</a>
+          </li>
+          
+          <li>
+            <a href="mailto:open@uah.es">Contacto</a>
+          </li>
+
       </ol>
     </nav>
-    {% endif %}
   </div>
-  <span class="copyright-site">Copyrights ©${datetime.now().year}. All Rights Reserved.</span>
+  <span class="copyright-site">2024 © Universidad de Alcal&aacute;.</span>
   % endif
     <div class="colophon">
-
+     
+      
       % if context.get('include_language_selector', footer_language_selector_is_enabled()):
           <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
       % endif
@@ -93,35 +103,46 @@
         ## which are not technically powered by OpenEdX.
         % if not hide_openedx_link:
         <ul class="logo-list">
-          <li>Powered by:</li>
           <li>
-            <a href="https://docs.tutor.edly.io" rel="noopener" target="_blank">
-              <img src="${static.url('images/tutor-logo.png')}" alt="Runs on Tutor" width="57" />
+            <a href="https://www.uah.es/es/" rel="noopener" target="_blank">
+              <img src="${static.url('images/tutor-logo.png')}" alt="img" width="140" />
             </a>
           </li>
           <li>
-            <a href="${footer['openedx_link']['url']}" rel="noopener" target="_blank">
-              <img src="${static.url('images/openedx-logo.png')}" alt="${footer['openedx_link']['title']}" width="79" />
+            <a href="https://www.uah.es/es/" rel="noopener" target="_blank">
+              <img src="${static.url('images/openedx-logo.png')}" alt="img" width="140" />
             </a>
           </li>
         </ul>
       </div>
-      {% if INDIGO_FOOTER_NAV_LINKS %}
+      
       <nav class="nav-colophon" aria-label="${_('About')}">
         <ol>
-            {% for link in INDIGO_FOOTER_NAV_LINKS %}
-            <li>
-              <a href="{{ link['url'] }}">{{ link['title'] }}</a>
-            </li>
-            {% endfor %}
+            
+         <li>
+            <a href="https://www.uah.es/es/politica-de-cookies/">Pol&iacute;tica de cookies</a>
+          </li>
+
+          <li>
+            <a href="https://www.uah.es/es/politica-privacidad/">Pol&iacute;tica de privacidad</a>
+          </li>
+
+          <li>
+            <a href="https://www.uah.es/es/aviso-legal/">Aviso legal</a>
+          </li>
+
+          <li>
+            <a href="mailto:open@uah.es">Contacto</a>
+          </li>
+            
         </ol>
       </nav>
-      {% endif %}
     </div>
-    <span class="copyright-site">Copyrights ©${datetime.now().year}. All Rights Reserved.</span>
+    <span class="copyright-site">2024 © Universidad de Alcal&aacute;.</span>
     % endif
       <div class="colophon">
-
+       
+        
         % if context.get('include_language_selector', footer_language_selector_is_enabled()):
             <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
         % endif
