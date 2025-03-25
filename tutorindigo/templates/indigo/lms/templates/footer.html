@@ -9,6 +9,7 @@
 <% footer = get_footer(is_secure=is_secure) %>
 <% icp_license_info = getattr(settings, 'ICP_LICENSE_INFO', {})%>
 <%namespace name='static' file='static_content.html'/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <!-- NEW IN INDIGO update footer -->
 % if uses_bootstrap:
 <div class="wrapper wrapper-footer">
@@ -31,11 +32,6 @@
         <li>
           <a href="https://www.uah.es/es/"" rel="noopener" target="_blank">
             <img src="${static.url('images/tutor-logo.png')}" alt="img" width="140" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.uah.es/es/" rel="noopener" target="_blank">
-            <img src="${static.url('images/openedx-logo.png')}" alt="img" width="140" />
           </a>
         </li>
       </ul>
@@ -63,7 +59,7 @@
       </ol>
     </nav>
   </div>
-  <span class="copyright-site">2024 © Universidad de Alcal&aacute;.</span>
+  <span class="copyright-site">2025 © Universidad de Alcal&aacute;.</span>
   % endif
     <div class="colophon">
      
@@ -102,21 +98,16 @@
         ## through an API to partner sites (such as marketing sites or blogs),
         ## which are not technically powered by OpenEdX.
         % if not hide_openedx_link:
-        <ul class="logo-list">
+        <ul class="footer-column logo-list">
           <li>
             <a href="https://www.uah.es/es/" rel="noopener" target="_blank">
               <img src="${static.url('images/tutor-logo.png')}" alt="img" width="140" />
             </a>
           </li>
-          <li>
-            <a href="https://www.uah.es/es/" rel="noopener" target="_blank">
-              <img src="${static.url('images/openedx-logo.png')}" alt="img" width="140" />
-            </a>
-          </li>
         </ul>
       </div>
       
-      <nav class="nav-colophon" aria-label="${_('About')}">
+      <nav class="footer-column nav-colophon" aria-label="${_('About')}">
         <ol>
             
          <li>
@@ -137,6 +128,25 @@
             
         </ol>
       </nav>
+      <div class="footer-column footer-social" aria-label="${_('Follow us on social media')}">
+        <ul class="social-icons">
+            <li>
+                <a href="https://x.com/uahes" target="_blank" rel="noopener" aria-label="Twitter">
+                    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/uahes" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/UniversidadDeAlcala/" target="_blank" rel="noopener" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
     </div>
     <span class="copyright-site">2024 © Universidad de Alcal&aacute;.</span>
     % endif
