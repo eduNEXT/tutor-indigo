@@ -127,6 +127,8 @@
     }
 }
 .saerch-bar-discover {
+    display: flex;
+    flex-direction: column;
     margin:  0 0 25px;
     @include media-breakpoint-up(md) {
         margin:  0 0 30px;
@@ -135,6 +137,109 @@
         display: block;
         clear: both;
         content: "";
+    }
+    .content-area {
+        display: flex; // Align the sidebar and courses horizontally
+        flex-direction: row;
+        gap: 16px; // Add spacing between the sidebar and courses
+        align-items: flex-start;
+
+        .course-holder {
+            flex-grow: 1; // Allow the courses to take up the remaining space
+            width: 100%; // Ensure it spans the available space
+        }
+    }
+    .filter-sidebar {
+        flex: 0 0 25%; // Set the sidebar to always occupy 25% of the width
+        max-width: 25%;
+        background: $primary-light;
+        padding: 15px;
+        border-radius: 6px;
+        box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05),
+                    0px 4px 6px -2px rgba(0, 0, 0, 0.05),
+                    0px 10px 15px -3px rgba(0, 0, 0, 0.10);
+        flex-shrink: 0;
+        height: auto;
+    }
+
+    .filter-sidebar .search-facets {
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        background: none;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .filter-sidebar .search-facets-lists {
+        padding: 10px 0;
+    }
+
+    .filter-sidebar .search-facets-lists h3 {
+        border: none;
+        padding: 0;
+        margin: 0 0 10px;
+        color: #0067B1;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    // Styles for filter options with checkbox-like behavior
+    .search-facets-lists {
+        ul.facet-list {
+            padding: 0 0 0 14px;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+        
+        ul.facet-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        button.facet-option {
+            flex-grow: 1;
+            position: relative;
+            float: none;
+            width: auto;
+            background: none !important;
+            padding: 0; /* Space for checkbox */
+            font-size: 14px;
+            line-height: 20px;
+            color: #191B23;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        button.facet-option:hover {
+            color: #191B23;
+        }
+
+        button.facet-option::before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            border: 2px solid #191B23;
+            border-radius: 4px;
+            margin-right: 8px;
+            display: inline-block;
+        }
+
+        button.facet-option.selected::before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            background: #0067B1;
+            text-align: center;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
     }
     .filters {
         .filters-inner {
@@ -160,6 +265,8 @@
         }
     }
     .discover-search {
+        width: 100%;
+        margin-bottom: 16px;
         overflow: hidden;
         .wrapper-search-context {
             overflow: hidden;
@@ -298,7 +405,7 @@
                 border: none;
                 padding: 0;
                 margin: 0 0 10px;
-                color: #191B23;
+                color: #e4d123;
                 font-size: 14px;
                 font-weight: 700;
             }
@@ -307,6 +414,8 @@
                 max-height: 100px;
                 overflow-y: auto;
                 li {
+                    display: flex;
+                    align-items: center;
                     height: auto;
                     margin: 0 0 10px;
                     button.facet-option {
@@ -335,7 +444,9 @@
                             }
                         }
                         .count {
-                            position: absolute;
+                            position: relative;
+                            flex-shrink: 0;
+                            margin-right: 10px;
                             left: 0;
                             right: auto;
                             top: 2px;
@@ -345,7 +456,7 @@
                             border: 1px solid #C4C7CF;
                             background: #fff;
                             .count-number {
-                                display: none;
+                                display: block;
                             }
                         }
                     }
