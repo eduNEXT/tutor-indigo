@@ -87,3 +87,21 @@
       </section>
     </section>
 </main>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const orgFilter = urlParams.get("org"); // Get the 'org' parameter
+  
+      if (orgFilter) {
+          applyOrgFilter(orgFilter);
+      }
+  });
+  
+  function applyOrgFilter(orgFilter) {
+      if (window.filterBar && window.filterBar.collection) {
+          const filterModel = new Filter({ id: orgFilter, type: "org" }); // Set type as 'org'
+          window.filterBar.collection.add(filterModel); // Add filter to collection
+      }
+  }
+  </script>

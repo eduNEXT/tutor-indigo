@@ -179,7 +179,7 @@
         border: none;
         padding: 0;
         margin: 0 0 10px;
-        color: #0067B1;
+        color: $primary;
         font-size: 14px;
         font-weight: 700;
     }
@@ -232,7 +232,7 @@
             content: "\f00c";
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
-            background: #0067B1;
+            background: $primary;
             text-align: center;
             line-height: 16px;
             display: flex;
