@@ -198,21 +198,14 @@
             margin-bottom: 10px;
         }
 
-        button.facet-option {
-            flex-grow: 1;
-            position: relative;
-            float: none;
-            width: auto;
-            background: none !important;
-            padding: 0; /* Space for checkbox */
-            font-size: 14px;
-            line-height: 20px;
-            color: #191B23;
-            cursor: pointer;
-            border: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+         button.facet-option {
+         max-width: 80%;
+         background: none !important;
+         padding: 0;
+         font-size: 14px;
+         color: #191B23;
+          cursor: pointer;
+          border: none;
         }
         button.facet-option:hover {
             color: #191B23;
