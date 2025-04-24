@@ -131,3 +131,92 @@ section.home {
         }
     }
 }
+
+
+.home-container {
+    .slider-container {
+          position: relative;
+          overflow: hidden;
+          width: 90%;
+          margin: 0 auto;
+
+         .courses-listing.slider-track {
+          display: flex;
+          transition: transform 0.3s ease-in-out;
+          width: 98%;
+          margin: 0 auto;
+        }
+
+        .slider-card {
+          flex: 0 0 100%;
+          padding: 10px;
+          margin: 0 !important;
+        }
+
+        .indicators {
+          text-align: center;
+          margin-top: 10px;
+        }
+        .indicator {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background: $gray;
+          border-radius: 50%;
+          margin: 0 5px;
+          cursor: pointer;
+        }
+        .indicator.active {
+          background: $primary;
+        }
+
+        @media (min-width: 576px) {
+          .slider-card {
+            flex: 0 0 50%;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .slider-card {
+            flex: 0 0 33.3333%;
+          }
+        }
+    }
+
+    section.courses {
+        position: relative;
+    }
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0);
+      color: $gray;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+
+      &:hover, &:focus, &:active {
+        color: $primary;
+      }
+    }
+    .nav-btn.prev {
+      left: 10px;
+    }
+    .nav-btn.next {
+      right: 10px;
+    }
+
+    .courses-container .courses .courses-listing li .course .course-info h2 {
+        margin-bottom: 30px;
+    }
+
+    .courses-container .courses .courses-listing li .course .course-image .cover-image img {
+        width:100%
+    }
+
+    .courses-container .courses .courses-listing li {
+        margin: 0 !important;
+    }
+}
