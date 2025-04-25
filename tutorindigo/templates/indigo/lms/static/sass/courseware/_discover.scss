@@ -1,5 +1,6 @@
 // Include custom discover
 .find-courses {
+    max-width: 90vw;
     padding-bottom: 0 !important;
     .courses-container {
         padding: 25px 0;
@@ -23,7 +24,7 @@
                 display: inline-block !important;
                 vertical-align: top;
                 width: 95% !important;
-                margin: 0 2.5% 25px !important;
+                margin: 0 1.5vw 25px !important;
                 max-height: unset !important;
                 @include media-breakpoint-up(sm) {
                     width: 45% !important;
@@ -141,7 +142,7 @@
     .content-area {
         display: flex; // Align the sidebar and courses horizontally
         flex-direction: row;
-        gap: 16px; // Add spacing between the sidebar and courses
+        gap: 3vw; // Add spacing between the sidebar and courses
         align-items: flex-start;
 
         .course-holder {
