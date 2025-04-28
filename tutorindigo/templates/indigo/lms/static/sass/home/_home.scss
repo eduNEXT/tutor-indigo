@@ -178,13 +178,14 @@ section.home {
 
         @media (min-width: 768px) {
           .slider-card {
-            flex: 0 0 33.3333%;
+            flex: 0 0 31.3333%;
           }
         }
     }
 
     section.courses {
         position: relative;
+        margin: 1vw 0;
     }
     .nav-btn {
       position: absolute;
@@ -217,6 +218,6 @@ section.home {
     }
 
     .courses-container .courses .courses-listing li {
-        margin: 0 !important;
+        margin: 0 1vw !important;
     }
 }

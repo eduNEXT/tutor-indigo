@@ -74,7 +74,7 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
     background-image: url(/static/indigo/images/16054802832_a69856debf_o.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: calc(100vh - 224.5px);
+    min-height: calc(100vh - 774.5px);
 }
 
 .home header {
@@ -126,6 +126,10 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
   font-weight: bold;
   color: #045C9B;
   text-align: center;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 28px; // Adjust font-size for small screens
+  }
 }
 .home-container {
 max-width: 98vw;
@@ -148,8 +152,6 @@ padding: 20px;
   align-items: center;
   justify-content: center;
   width: 90%;
-  max-width: 250px;
-  height: 100px; /* Fixed height for uniform size */
 }
 .university img {
   max-width: 90%; /* Increase the width */
