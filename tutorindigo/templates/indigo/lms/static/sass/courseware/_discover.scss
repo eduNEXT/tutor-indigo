@@ -1,5 +1,6 @@
 // Include custom discover
 .find-courses {
+    max-width: 90vw;
     padding-bottom: 0 !important;
     .courses-container {
         padding: 25px 0;
@@ -23,7 +24,7 @@
                 display: inline-block !important;
                 vertical-align: top;
                 width: 95% !important;
-                margin: 0 2.5% 25px !important;
+                margin: 0 1.5vw 25px !important;
                 max-height: unset !important;
                 @include media-breakpoint-up(sm) {
                     width: 45% !important;
@@ -127,6 +128,8 @@
     }
 }
 .saerch-bar-discover {
+    display: flex;
+    flex-direction: column;
     margin:  0 0 25px;
     @include media-breakpoint-up(md) {
         margin:  0 0 30px;
@@ -135,6 +138,112 @@
         display: block;
         clear: both;
         content: "";
+    }
+    .content-area {
+        display: flex; // Align the sidebar and courses horizontally
+        flex-direction: row;
+        gap: 3vw; // Add spacing between the sidebar and courses
+        align-items: flex-start;
+
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+        }
+
+        .course-holder {
+            flex-grow: 1; // Allow the courses to take up the remaining space
+            width: 100%; // Ensure it spans the available space
+        }
+    }
+    .filter-sidebar {
+        flex: 0 0 25%; // Set the sidebar to always occupy 25% of the width
+        max-width: 25%;
+        background: $primary-light;
+        padding: 15px;
+        border-radius: 6px;
+        box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05),
+                    0px 4px 6px -2px rgba(0, 0, 0, 0.05),
+                    0px 10px 15px -3px rgba(0, 0, 0, 0.10);
+        flex-shrink: 0;
+        height: auto;
+
+        @include media-breakpoint-down(sm) {
+            max-width: 100%;
+        }
+    }
+
+    .filter-sidebar .search-facets {
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+        background: none;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .filter-sidebar .search-facets-lists {
+        padding: 10px 0;
+    }
+
+    .filter-sidebar .search-facets-lists h3 {
+        border: none;
+        padding: 0;
+        margin: 0 0 10px;
+        color: $primary;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    // Styles for filter options with checkbox-like behavior
+    .search-facets-lists {
+        ul.facet-list {
+            padding: 0 0 0 14px;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+        
+        ul.facet-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+         button.facet-option {
+         max-width: 80%;
+         background: none !important;
+         padding: 0;
+         font-size: 14px;
+         color: #191B23;
+          cursor: pointer;
+          border: none;
+        }
+        button.facet-option:hover {
+            color: #191B23;
+        }
+
+        button.facet-option::before {
+            content: "";
+              width: 16px;
+              height: 16px;
+              border: 2px solid #191B23;
+              border-radius:  4px;
+              margin-right: 8px;
+              display: inline-block;
+              position: relative;
+              top: 4px;
+        }
+
+        button.facet-option.selected::before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        background: #0067B1;
+         text-align: center;
+         line-height: 16px;
+         top: 0;
+        color: #FFF;
+        border: 2px solid #0067B1;
+        }
+        
     }
     .filters {
         .filters-inner {
@@ -160,6 +269,8 @@
         }
     }
     .discover-search {
+        width: 100%;
+        margin-bottom: 16px;
         overflow: hidden;
         .wrapper-search-context {
             overflow: hidden;
@@ -298,7 +409,7 @@
                 border: none;
                 padding: 0;
                 margin: 0 0 10px;
-                color: #191B23;
+                color: #e4d123;
                 font-size: 14px;
                 font-weight: 700;
             }
@@ -307,6 +418,8 @@
                 max-height: 100px;
                 overflow-y: auto;
                 li {
+                    display: flex;
+                    align-items: center;
                     height: auto;
                     margin: 0 0 10px;
                     button.facet-option {
@@ -335,7 +448,9 @@
                             }
                         }
                         .count {
-                            position: absolute;
+                            position: relative;
+                            flex-shrink: 0;
+                            margin-right: 10px;
                             left: 0;
                             right: auto;
                             top: 2px;
@@ -345,7 +460,7 @@
                             border: 1px solid #C4C7CF;
                             background: #fff;
                             .count-number {
-                                display: none;
+                                display: block;
                             }
                         }
                     }

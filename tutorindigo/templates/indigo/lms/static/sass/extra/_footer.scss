@@ -1,99 +1,112 @@
 // Include custom Footer
 .wrapper-footer {
+    background-color: $primary;
+    color: #f8f9fa;
     padding: 25px 0;
-    border-top: 1px solid #E5E7EB;
+    border-top: 1px solid $primary;
     @include media-breakpoint-up(md) {
         padding: 45px 0;
     }
 }
+
+#footer {
+    color: #fff;
+}
+
+#footer a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: #ccc;
+}
+
 footer.tutor-container {
     margin: 0 auto;
     padding: 0 15px;
     max-width: 1090px;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+
     @include media-breakpoint-up(lg) {
         text-align: left;
     }
+
     .footer-top {
-        margin: 0 0 15px;
-        &:after {
-            clear: both;
-            display: block;
-            content: "";
-        }
-        .powered-area {
-            margin: 0 0 10px;
-            @include media-breakpoint-up(md) {
-                margin: 0 0 15px;
-            }
-            @include media-breakpoint-up(lg) {
-                float: left;
-            }
-        }
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
     }
+
+    .footer-column {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .powered-area {
+        flex: 1;
+    }
+
+    .nav-colophon {
+        flex: 1;
+    }
+
+    .footer-social {
+        flex: 1;
+        text-align: right;
+    }
+
     .logo-list {
         list-style: none;
         margin: 0;
         padding: 0;
-        letter-spacing: -.3em;
-        li {
-            display: inline-block;
-            vertical-align: middle;
-            padding: 0 5px;
-            letter-spacing: normal;
-            position: relative;
-            font-size: 12px;
-            line-height: 18px;
-            color: #6B7280;
-            &:first-child {
-                padding-left: 0;
-            }
-            &:last-child {
-                padding-left: 0px;
-                &:after {
-                    position: absolute;
-                    left: 5px;
-                    top: 50%;
-                    content: "";
-                    width: 1px;
-                    height: 29px;
-                    margin: -14px 0 0;
-                    background: transparent;;
-                }
-            }
-        }
+        display: flex;
+        justify-content: left;
+        gap: 10px;
     }
-    .nav-colophon {
-        display: block;
-        overflow: hidden;
-        ol {
-            text-align: center;
-            li {
-                display: inline-block;
-                vertical-align: top;
-                padding: 0 8px;
-                font-size: 14px;
-                line-height: 20px;
-                @include media-breakpoint-up(md) {
-                    padding: 0 12px;
-                    font-size: 16px;
-                    line-height: 24px;
-                }
-                a {
-                    color: $light-drak;
-                    text-decoration: none;
-                    &:hover {
-                        color: $drak;
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
+
+    .nav-colophon ol {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-left: 1px solid #fff; // Adds a white left border
+        padding-left: 20px; // Adds spacing between the border and the content
+        line-height: 1.5;
     }
+
+    .footer-social .social-icons {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-social .social-icons li a {
+        color: #fff;
+        font-size: 24px;
+        text-decoration: none;
+    }
+
+    .footer-social .social-icons li a:hover {
+        color: #ccc;
+    }
+
     .copyright-site {
         display: block;
-        font-size: 12px;
+        font-size: 20px;
         line-height: 16px;
-        color: $light-drak;
+        color: #fff;
+        text-align: center;
+        margin-top: 10px;
     }
 }

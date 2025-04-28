@@ -74,7 +74,7 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
     background-image: url(/static/indigo/images/16054802832_a69856debf_o.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: calc(100vh - 224.5px);
+    min-height: calc(100vh - 374.5px);
 }
 
 .home header {
@@ -118,6 +118,53 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
       margin-right: 20px;
     }
   }
+}
+
+////////////////// Home
+.new-title {
+  font-size: 38px;
+  font-weight: bold;
+  color: #045C9B;
+  text-align: center;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 28px; // Adjust font-size for small screens
+  }
+}
+.home-container {
+max-width: 98vw;
+margin: 0 auto;
+padding: 20px;
+}
+.universities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2vw;
+  margin: 1vw;
+}
+.university {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+.university img {
+  max-width: 90%; /* Increase the width */
+  max-height: 90%; /* Allow it to take more space */
+  height: auto;
+  object-fit: contain; /* Ensures it fits well inside the box */
+  margin-bottom: 5px;
+}
+.university p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
 }
 
 ////////////////// User dashboard /dashboard
