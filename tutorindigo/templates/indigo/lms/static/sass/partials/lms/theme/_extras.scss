@@ -74,7 +74,7 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
     background-image: url(/static/indigo/images/16054802832_a69856debf_o.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: calc(100vh - 774.5px);
+    min-height: calc(100vh - 374.5px);
 }
 
 .home header {
@@ -140,7 +140,7 @@ padding: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2vw;
-  margin-top: 20px;
+  margin: 1vw;
 }
 .university {
   background: white;
