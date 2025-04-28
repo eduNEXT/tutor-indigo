@@ -145,6 +145,10 @@
         gap: 3vw; // Add spacing between the sidebar and courses
         align-items: flex-start;
 
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+        }
+
         .course-holder {
             flex-grow: 1; // Allow the courses to take up the remaining space
             width: 100%; // Ensure it spans the available space
@@ -161,6 +165,10 @@
                     0px 10px 15px -3px rgba(0, 0, 0, 0.10);
         flex-shrink: 0;
         height: auto;
+
+        @include media-breakpoint-down(sm) {
+            max-width: 100%;
+        }
     }
 
     .filter-sidebar .search-facets {
